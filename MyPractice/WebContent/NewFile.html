@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title> 내장함수 </title>
+<style>
+.swiper-container {
+width : 600px;
+height : 300px;
+}	
+</style>
+	   
+	    <link rel="stylesheet" href="js/dist/css/swiper.min.css"></link>
+		<link rel="stylesheet" href="js/flipclock/css/flipclock.css"></link>
+		
+		<script src="js/jquery-1.12.4.js"></script>
+		<script src="js/dist/js/swiper.min.js"></script>
+		<script src="js/flipclock/js/flipclock.min.js"></script>
+	
+</head>
+<body>
+		
+		<div class="swiper-container">
+   			 <!-- Additional required wrapper -->
+    		<div class="swiper-wrapper">
+        	<!-- Slides -->
+        	<div class="swiper-slide"><img src="images/pic_1.jpg"></img></div>
+        	<div class="swiper-slide"><img src="images/pic_2.jpg"></img></div>
+        	<div class="swiper-slide"<img src="images/pic_3.jpg"></img></div>
+        
+    		</div>
+    		<!-- If we need pagination -->
+    		 <div class="swiper-pagination"></div>
+    
+    		<!-- If we need navigation buttons -->
+    		<div class="swiper-button-prev"></div>
+    			<div class="swiper-button-next"></div>
+		</div>
+ 		 <div class="clock"></div>
+  <script>        
+  var mySwiper = new Swiper ('.swiper-container', {
+    // Optional parameters
+    loop: true,
+    
+    // If we need pagination
+    pagination: '.swiper-pagination',
+    
+    // Navigation arrows
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev'
+ 
+  });
+  </script>
+  <script type="text/javascript">
+  	var clock = $('.clock').FlipClock({
+		  clockFace : 'TwentyFourHourClock'
+  });
+  </script>
+</body>
+</html>

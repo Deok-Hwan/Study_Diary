@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+		<script type="text/javascript"
+		src="js/jquery-1.12.4.js">
+		</script>
+		
+		<script type="text/javascript">
+		$(function(){
+			
+			$.ajax({
+				url : "http://www.showpun.com/api/common/v1/adDeal/selectAdDealGrpListAjax.ans",
+				method: "POST",
+				data : {
+					adDealGrpTypeCd : "P"
+				},
+				dataType : "json",
+				success : function(res){
+					console.log(res);
+					
+					if(res.result == "ok"){
+						var list = res.adDealGrpList;
+						var str="";
+						for(var i=0 ; i<list.length ; i++){
+							var data = list[i];
+							
+							str += "<tr>";
+							str += "	<td>" + data.adDealGrpId + "</td>";
+							str += "	<td>" + data.adDealGrpName + "</td>";
+							str += "</tr>";
+							}	 
+						$("#disp").append(str);
+					}
+					else
+						{
+						alert(res.resultMsg);
+						}
+					
+				},
+				error : function(res){
+					console.log(res);
+				}
+			});
+		});
+		</script>
+</head>
+<body>
+	
+		<table border="1">
+			<thead>
+			<tr>
+				<td>번호 </td>
+				<td>이름</td>
+			</tr>
+			</thead>
+			
+			<tbody id="disp">	
+			</tbody>
+		</table>
+	
+</body>
+</html>
